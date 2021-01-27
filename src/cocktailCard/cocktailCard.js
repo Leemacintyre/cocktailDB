@@ -1,20 +1,21 @@
-import axios from 'axios';
 import React from 'react';
+import styles from './cocktailCard.module.scss';
 import { withRouter } from 'react-router';
 
 const CocktailCard = (props) => {
 	// console.log(props);
-	const { id, name, image, info, glass, history } = props;
+	const { id, name, image, info, mainAlch, history } = props;
 
 	return (
 		<div
+			className={styles.container}
 			onClick={() => {
 				history.push(`/${id}`);
 			}}>
-			<h1>{name}</h1>
-			<img src={image} alt='type' style={{ width: '100px' }} />
-			<h3>{info}</h3>
-			<h3>{glass}</h3>
+			<p className={styles.name}>{name}</p>
+			<img className={styles.image} src={image} alt='type' />
+			<p className={styles.mainAlch}>{mainAlch}</p>
+			<p className={styles.info}>{info}</p>
 		</div>
 	);
 };

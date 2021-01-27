@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import styles from './cocktailList.module.scss';
 
 import CocktailCard from '../cocktailCard/cocktailCard';
 import { SearchField } from '../searchField/searchField';
@@ -21,21 +22,21 @@ export const CocktailList = () => {
 			const { data } = response;
 			const { drinks } = data;
 			setDrinkData(drinks);
-			// console.log(drinks);
+			console.log(drinks);
 			const newDrinks = drinks.map((item) => {
 				const {
 					idDrink,
 					strDrink,
 					strDrinkThumb,
 					strAlcoholic,
-					strGlass,
+					strIngredient1,
 				} = item;
 				return {
 					id: idDrink,
 					name: strDrink,
 					image: strDrinkThumb,
 					info: strAlcoholic,
-					glass: strGlass,
+					mainAlch: strIngredient1,
 				};
 			});
 			setNewDrinks(newDrinks);
@@ -51,21 +52,23 @@ export const CocktailList = () => {
 	console.log(searchField);
 
 	return (
-		<div>
+		<div className={styles.container}>
 			<SearchField handleSearchField={handleSearchField} />
-			{newDrinks.map(
-				(item, i) =>
-					item.name.toUpperCase().includes(searchField.toUpperCase()) && (
-						<CocktailCard
-							key={item.id}
-							id={item.id}
-							name={item.name}
-							image={item.image}
-							info={item.info}
-							glass={item.glass}
-						/>
-					)
-			)}
+			<div className={styles.cocktailCard}>
+				{newDrinks.map(
+					(item, i) =>
+						item.name.toUpperCase().includes(searchField.toUpperCase()) && (
+							<CocktailCard
+								key={item.id}
+								id={item.id}
+								name={item.name}
+								image={item.image}
+								info={item.info}
+								mainAlch={item.mainAlch}
+							/>
+						)
+				)}
+			</div>
 		</div>
 	);
 };
