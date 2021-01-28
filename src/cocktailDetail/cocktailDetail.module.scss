@@ -1,0 +1,83 @@
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	font-weight: 500;
+
+	.title {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		font-weight: 900;
+		font-size: 3em;
+		color: darkslategray;
+	}
+	.imageContainer {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		.image {
+			width: 40%;
+			border-radius: 30px;
+		}
+	}
+	.glassContainer {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		margin-top: 20px;
+
+		.glassName {
+			margin-left: 20%;
+		}
+		.glassType {
+			margin-right: 20%;
+		}
+	}
+
+	.ingredientList {
+		width: 100%;
+		margin-bottom: 20px;
+
+		.ingredientsTitle {
+			width: 100%;
+			color: #ec9a29;
+			font-size: 1.2em;
+			margin-top: 20px;
+		}
+
+		.ingredientContainer {
+			display: flex;
+			justify-content: space-between;
+
+			.ingredient {
+				margin-left: 20%;
+			}
+			.measure {
+				margin-right: 20%;
+			}
+		}
+	}
+	.instructionsContainer {
+		width: 100%;
+		.instructionsTitle {
+			color: #ec9a29;
+			font-size: 1.2em;
+		}
+		.instructions {
+			margin-left: 20%;
+			margin-right: 20%;
+		}
+	}
+	.return {
+		margin-top: 30px;
+		margin-bottom: 20px;
+		font-size: 1.2em;
+		color: #a8201a;
+		text-decoration: none;
+		font-weight: 600;
+	}
+}

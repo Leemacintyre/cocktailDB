@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import styles from './cocktailDetail.module.scss';
+
 export const CocktailDetail = (props) => {
 	const { match } = props;
 	const { params } = match;
@@ -31,49 +33,98 @@ export const CocktailDetail = (props) => {
 			strIngredient4,
 			strIngredient5,
 			strIngredient6,
+			strIngredient7,
+			strIngredient8,
+			strIngredient9,
+			strIngredient10,
+			strIngredient11,
+			strIngredient12,
 			strMeasure1,
 			strMeasure2,
 			strMeasure3,
 			strMeasure4,
 			strMeasure5,
 			strMeasure6,
+			strMeasure7,
+			strMeasure8,
+			strMeasure9,
+			strMeasure10,
+			strMeasure11,
+			strMeasure12,
 		} = drinkData[0];
 
 		// console.log(strDrink);
 
 		return (
-			<div>
-				<h1>{strDrink}</h1>
-				<img src={strDrinkThumb} alt='type' style={{ width: '100px' }}></img>
-				<h1>{strGlass}</h1>
-				<div>
-					<div>
-						<h3>{strIngredient1}</h3>
-						<h3>{strMeasure1}</h3>
+			<div className={styles.container}>
+				<p className={styles.title}>{strDrink}</p>
+				<div className={styles.imageContainer}>
+					<img className={styles.image} src={strDrinkThumb} alt='type'></img>
+				</div>
+				<div className={styles.glassContainer}>
+					<p className={styles.glassName}>Glass</p>
+					<p className={styles.glassType}>{strGlass}</p>
+				</div>
+				<div className={styles.ingredientList}>
+					<div className={styles.ingredientsTitle}>
+						<p>Ingredients:</p>
 					</div>
-					<div>
-						<h3>{strIngredient2}</h3>
-						<h3>{strMeasure2}</h3>
+					<div className={styles.ingredientContainer}>
+						<p className={styles.ingredient}>{strIngredient1}</p>
+						<p className={styles.measure}>{strMeasure1}</p>
 					</div>
-					<div>
-						<h3>{strIngredient3}</h3>
-						<h3>{strMeasure3}</h3>
+					<div className={styles.ingredientContainer}>
+						<p className={styles.ingredient}>{strIngredient2}</p>
+						<p className={styles.measure}>{strMeasure2}</p>
 					</div>
-					<div>
-						<h3>{strIngredient4}</h3>
-						<h3>{strMeasure4}</h3>
+					<div className={styles.ingredientContainer}>
+						<p className={styles.ingredient}>{strIngredient3}</p>
+						<p className={styles.measure}>{strMeasure3}</p>
 					</div>
-					<div>
-						<h3>{strIngredient5}</h3>
-						<h3>{strMeasure5}</h3>
+					<div className={styles.ingredientContainer}>
+						<p className={styles.ingredient}>{strIngredient4}</p>
+						<p className={styles.measure}>{strMeasure4}</p>
 					</div>
-					<div>
-						<h3>{strIngredient6}</h3>
-						<h3>{strMeasure6}</h3>
+					<div className={styles.ingredientContainer}>
+						<p className={styles.ingredient}>{strIngredient5}</p>
+						<p className={styles.measure}>{strMeasure5}</p>
+					</div>
+					<div className={styles.ingredientContainer}>
+						<p className={styles.ingredient}>{strIngredient6}</p>
+						<p className={styles.measure}>{strMeasure6}</p>
+					</div>
+					<div className={styles.ingredientContainer}>
+						<p className={styles.ingredient}>{strIngredient7}</p>
+						<p className={styles.measure}>{strMeasure7}</p>
+					</div>
+					<div className={styles.ingredientContainer}>
+						<p className={styles.ingredient}>{strIngredient8}</p>
+						<p className={styles.measure}>{strMeasure8}</p>
+					</div>
+					<div className={styles.ingredientContainer}>
+						<p className={styles.ingredient}>{strIngredient9}</p>
+						<p className={styles.measure}>{strMeasure9}</p>
+					</div>
+					<div className={styles.ingredientContainer}>
+						<p className={styles.ingredient}>{strIngredient10}</p>
+						<p className={styles.measure}>{strMeasure10}</p>
+					</div>
+					<div className={styles.ingredientContainer}>
+						<p className={styles.ingredient}>{strIngredient11}</p>
+						<p className={styles.measure}>{strMeasure11}</p>
+					</div>
+					<div className={styles.ingredientContainer}>
+						<p className={styles.ingredient}>{strIngredient12}</p>
+						<p className={styles.measure}>{strMeasure12}</p>
 					</div>
 				</div>
-				<p>{strInstructions}</p>
-				<Link to='/'>Return</Link>
+				<div className={styles.instructionsContainer}>
+					<p className={styles.instructionsTitle}>How to Make:</p>
+					<p className={styles.instructions}>{strInstructions}</p>
+				</div>
+				<Link className={styles.return} to='/'>
+					Return
+				</Link>
 			</div>
 		);
 	};
