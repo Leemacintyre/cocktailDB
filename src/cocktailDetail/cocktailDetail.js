@@ -53,8 +53,6 @@ export const CocktailDetail = (props) => {
 			strMeasure12,
 		} = drinkData[0];
 
-		// console.log(strDrink);
-
 		return (
 			<div className={styles.container}>
 				<p className={styles.title}>{strDrink}</p>

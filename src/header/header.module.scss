@@ -1,8 +1,9 @@
 .container {
 	display: flex;
-	justify-content: flex-end;
-	align-items: flex-end;
+	justify-content: space-between;
+	align-items: center;
 	background-color: #dad2d8;
 	color: #0f8b8d;
+	padding-right: 16px;
 	font-size: 3em;
 }

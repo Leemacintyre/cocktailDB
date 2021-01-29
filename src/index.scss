@@ -8,7 +8,22 @@ body {
 	font-family: 'Yusei Magic', sans-serif;
 }
 
-p {
+* {
+	box-sizing: border-box;
 	margin: 0;
-	border: 0;
+	padding: 0;
+}
+
+.vodka {
+	display: flex;
+	height: 90vh;
+	align-items: center;
+	justify-content: center;
+	font-size: 3rem;
+}
+
+@media only screen and (max-width: 350px) {
+	body {
+		font-size: 12px;
+	}
 }
