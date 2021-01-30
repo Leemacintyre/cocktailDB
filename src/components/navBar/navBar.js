@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
-import styles from './navBar.module.scss';
+import { useSelector, useDispatch } from 'react-redux';
 import './navBar.css';
 import { Link } from 'react-router-dom';
 import { SidebarData } from './sidebarData';
+import { alchType } from '../../redux/actions';
+
 import * as AiIcons from 'react-icons/ai';
 import * as FaIcons from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 
 export const NavBar = () => {
 	const [sidebar, setSidebar] = useState(false);
+	const dispatch = useDispatch();
 
 	const showSidebar = () => {
 		setSidebar(!sidebar);
@@ -33,7 +36,10 @@ export const NavBar = () => {
 						</li>
 						{SidebarData.map((item, index) => {
 							return (
-								<li key={index} className={item.cName}>
+								<li
+									key={index}
+									className={item.cName}
+									onClick={() => dispatch(alchType(item.title))}>
 									<Link to={item.path}>
 										{item.icon}
 										<span>{item.title}</span>

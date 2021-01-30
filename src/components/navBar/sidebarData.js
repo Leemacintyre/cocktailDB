@@ -1,28 +1,35 @@
 import React from 'react';
 import * as BiIcons from 'react-icons/bi';
+import * as GiIcons from 'react-icons/gi';
 
 export const SidebarData = [
 	{
-		title: 'Vodka',
+		title: 'Search All',
 		path: '/',
-		icon: <BiIcons.BiDrink />,
+		icon: <GiIcons.GiDrinkMe />,
 		cName: 'nav-text',
 	},
 	{
 		title: 'Vodka',
-		path: '/',
+		path: '/selectedalch',
 		icon: <BiIcons.BiDrink />,
 		cName: 'nav-text',
 	},
 	{
-		title: 'Vodka',
-		path: '/',
+		title: 'Whisky',
+		path: '/selectedalch',
 		icon: <BiIcons.BiDrink />,
 		cName: 'nav-text',
 	},
 	{
-		title: 'Vodka',
-		path: '/',
+		title: 'Whiskey',
+		path: '/selectedalch',
+		icon: <BiIcons.BiDrink />,
+		cName: 'nav-text',
+	},
+	{
+		title: 'Gin',
+		path: '/selectedalch',
 		icon: <BiIcons.BiDrink />,
 		cName: 'nav-text',
 	},

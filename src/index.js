@@ -6,16 +6,27 @@ import reportWebVitals from './reportWebVitals';
 import { Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { rootReducers } from './redux/reducer';
+
 import './index.scss';
 
 const history = createBrowserHistory();
+const store = createStore(
+	rootReducers,
+	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
-	<React.StrictMode>
-		<Router history={history}>
-			<App className='indexContainer' />
-		</Router>
-	</React.StrictMode>,
+	<Provider store={store}>
+		<React.StrictMode>
+			<Router history={history}>
+				<App className='indexContainer' />
+			</Router>
+		</React.StrictMode>
+	</Provider>,
+
 	document.getElementById('root')
 );
 
