@@ -49,7 +49,7 @@ export const SubMenu = ({ item }) => {
 	const showSubnav = () => setSubnav(!subnav);
 
 	return (
-		<>
+		<div onClick={item.subNav ? '' : () => dispatch(alchType(item.title))}>
 			<SidebarLink to={item.path} onClick={item.subNav && showSubnav}>
 				<div onClick={item.subNav ? '' : () => dispatch(alchType(item.title))}>
 					{item.icon}
@@ -71,10 +71,12 @@ export const SubMenu = ({ item }) => {
 							key={index}
 							onClick={() => dispatch(alchType(item.title))}>
 							{item.icon}
-							<SidebarLabel>{item.title}</SidebarLabel>
+							<SidebarLabel onClick={() => dispatch(alchType(item.title))}>
+								{item.title}
+							</SidebarLabel>
 						</DropdownLink>
 					);
 				})}
-		</>
+		</div>
 	);
 };

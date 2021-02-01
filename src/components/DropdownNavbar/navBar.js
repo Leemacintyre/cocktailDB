@@ -36,6 +36,21 @@ const SidebarNav = styled.nav`
 	left: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
 	transition: 350ms;
 	z-index: 10;
+	@media only screen and (max-width: 400px) {
+		overflow: scroll;
+	}
+`;
+const SidebarNavInvisible = styled.nav`
+	background: transparent;
+	width: calc(100% - 250px);
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	right: ${({ sidebar }) => (sidebar ? '0' : '110%')};
+	transition: 350ms;
+	z-index: 9;
 `;
 
 const SidebarWrap = styled.div`
@@ -55,7 +70,10 @@ export const NavBar = () => {
 						<FaIcons.FaBars onClick={showSidebar} />
 					</NavIcon>
 				</Nav>
-				<SidebarNav sidebar={sidebar}>
+				<SidebarNavInvisible
+					sidebar={sidebar}
+					onClick={showSidebar}></SidebarNavInvisible>
+				<SidebarNav className='media' sidebar={sidebar}>
 					<SidebarWrap>
 						<NavIcon to='#'>
 							<AiIcons.AiOutlineClose onClick={showSidebar} />
